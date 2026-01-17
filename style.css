@@ -1,0 +1,111 @@
+body{
+    background-color: #f3f3f6;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+.display-1{
+    font-size: clamp(80px, 25vw, 220px);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    margin-bottom: 0 !important;
+    display: flex;
+    justify-content: center;
+}
+@keyframes bounce{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(0.1em);
+    }
+}
+.bounce-container{
+    position: relative;
+    display: inline-flex;
+}
+.bounce-container span{
+    display: inline-block;
+    animation: bounce 1.5s ease-in-out infinite;
+}
+.bounce-container span:nth-child(2) {
+    position: relative;
+    z-index: 20;
+}
+.static-underline{
+    position: absolute;
+    width: 30%;
+    height: 0.3em;
+    background-color: #333;
+    border-radius: 50px;
+    bottom: 1.4em;
+    z-index: -1;
+    left: 51%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.btn-custom {
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-weight: 600;
+    min-width: 160px;
+}
+.search-group{
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    background: white;
+    overflow: hidden;
+}
+
+.search-group input:focus{
+    box-shadow: none;
+}
+.btn-custom:hover{
+    background-color: #162c6a;
+}
+.help-btn{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/*Media Queries for Fine-tuning*/
+@media (max-width: 576px){
+    .d-flex.gap-3{
+        flex-direction: column;
+        align-items: center;
+        font-size: clamp(6opx, 30vw, 120px);
+    }
+    .bounce-container span{
+        animation: bounce 1.5s ease-in-out infinite;
+    }
+    .btn-custom{
+        width: 100%;
+        max-width: 280px;
+        padding: 10px 20px;
+    }
+}
+@media (max-width: 390px){
+    .static-underline{
+        bottom: 0.8em;
+    }
+}
+@media (max-width: 430px){
+    .static-underline{
+        bottom: 0.6em;
+    }
+}
+@media (max-width: 600px) {
+  @keyframes slide-down {
+    0% { transform: translateY(-100%); }
+    50% { transform: translateY(-10%); } /* Less movement */
+    100% { transform: translateY(0); }
+  }
+}
